@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <name>Mail Behaviours</name>
+   <key>mailbehaviours</key>
+   <state>stable</state>
+    <logo>https://raw.githubusercontent.com/tomolimo/mailbehaviours/master/plugin.png</logo>
+   <description>
+      <short>
+         <en><![CDATA[Mail Behaviours GLPI Plugin may be used to create Ticket "On Behalf Of"]]></en>
+      </short>
+      <long>
+	      <en><![CDATA[It gives the possibility to create tickets via emails and to set a ticket requester using a special tag in the email body: the ##From: tag. It adds also a ##CC: tag.]]></en>
+      </long>
+   </description>
+   <homepage>https://github.com/tomolimo/mailbehaviours</homepage>
+   <download>https://github.com/tomolimo/mailbehaviours/releases</download>
+   <issues>https://github.com/tomolimo/mailbehaviours/issues</issues>
+   <readme>https://github.com/tomolimo/mailbehaviours/wiki</readme>
+   <authors>
+      <author>Olivier Moron</author>
+   </authors>
+   <versions>
+      <version>
+         <num>1.0.0</num>
+         <compatibility>9.5</compatibility>
+      </version>
+   </versions>
+   <langs>
+      <lang>Any</lang>
+   </langs>
+   <license><![CDATA[GPL v2+]]></license>
+   <tags>
+         <en>
+            <tag>Mail</tag>
+            <tag>Mail collector</tag>
+            <tag>Mailgate</tag>
+            <tag>Ticket</tag>
+            <tag>On Behalf Of</tag>
+            <tag>Requester</tag>
+         </en>
+   </tags>
+</root>
