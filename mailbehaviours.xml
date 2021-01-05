@@ -9,7 +9,7 @@
          <en><![CDATA[Mail Behaviours GLPI Plugin may be used to create Ticket "On Behalf Of"]]></en>
       </short>
       <long>
-	      <en><![CDATA[It gives the possibility to create tickets via emails and to set a ticket requester using a special tag in the email body: the ##From: tag. It adds also a ##CC: tag.]]></en>
+	      <en><![CDATA[It gives the possibility to create tickets via emails and to set a ticket requester using a special tag in the email body: the ##From: tag. It adds also a ##CC: tag (users or groups).]]></en>
       </long>
    </description>
    <homepage>https://github.com/tomolimo/mailbehaviours</homepage>
@@ -21,7 +21,7 @@
    </authors>
    <versions>
       <version>
-         <num>1.0.0</num>
+         <num>1.0.2</num>
          <compatibility>9.5</compatibility>
       </version>
    </versions>
