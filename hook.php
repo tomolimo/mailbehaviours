@@ -167,17 +167,18 @@ class PluginMailBehaviours {
 
             // as we have changed the requester, then we must replay the Rules for assigning a ticket created through a mails receiver
             $mailcollector = new MailCollector();
+            if ($mailcollector->getFromDB($parm->input['_mailgate'])) {
+               $rule_options['ticket']              = $parm->input;
+               $rule_options['headers']             = $mailcollector->getHeaders($parm->input['_message']);
+               $rule_options['mailcollector']       = $parm->input['_mailgate'];
+               $rule_options['_users_id_requester'] = $parm->input['_users_id_requester'];
+               $rulecollection                      = new RuleMailCollectorCollection();
+               $output                              = $rulecollection->processAllRules([], [], $rule_options);
 
-            $rule_options['ticket']              = $parm->input;
-            $rule_options['headers']             = $mailcollector->getHeaders($parm->input['_message']);
-            $rule_options['mailcollector']       = $parm->input['_mailgate'];
-            $rule_options['_users_id_requester'] = $parm->input['_users_id_requester'];
-            $rulecollection                      = new RuleMailCollectorCollection();
-            $output                              = $rulecollection->processAllRules([], [], $rule_options);
-
-            // returns the new values in the input field
-            foreach ($output as $key => $value) {
-               $parm->input[$key] = $value;
+               // returns the new values in the input field
+               foreach ($output as $key => $value) {
+                  $parm->input[$key] = $value;
+               }
             }
          }
       }
