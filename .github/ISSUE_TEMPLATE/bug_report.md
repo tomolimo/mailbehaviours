@@ -7,10 +7,31 @@ assignees: ''
 
 ---
 
+<!--
+
+Dear user.
+
+BEFORE SUBMITTING YOUR ISSUE, please make sure to read and follow these steps:
+
+* We prefer to keep this tracker in ENGLISH. If you want support in your language, the community forum (https://forum.glpi-project.org) is the best place.
+* Please use the below template.
+
+For more informations, please check contributing guide:
+https://github.com/glpi-project/glpi/blob/master/CONTRIBUTING.md
+
+The team.
+-->
+
 **Describe the bug**
+
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+**Page(s) URL**
+
+If applicable, page(s) URL where the bug happens.
+
+**To reproduce**
+
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
@@ -18,21 +39,27 @@ Steps to reproduce the behavior:
 4. See error
 
 **Expected behavior**
+
 A clear and concise description of what you expected to happen.
 
+**Logs**
+
+```
+paste logs here
+Find them in *-error.log files under glpi/files/_log/
+```
+
 **Screenshots**
+
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+**Your GLPI setup (you can find it in Setup > General menu, System tab)**
+
+```
+paste here
+```
 
 **Additional context**
+
 Add any other context about the problem here.
