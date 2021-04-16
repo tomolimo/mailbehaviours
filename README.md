@@ -1,5 +1,5 @@
 # mailbehaviours
-Mail Behaviours GLPI Plugin may be used to create Tickets via emails with another requester than the email sender: to be able to create Tickets "On Behalf Of" via emails.
+Mail Behaviours GLPI Plugin may be used to create Tickets via emails with another requester than the email sender: to be able to create Tickets (or Followups) "On Behalf Of" via emails.
 It gives the possivbility to have a different ticket requester than the ticket writer
 
 Before GLPI 9.5, this feature was available in the MailAnalyzer plugin
@@ -21,7 +21,7 @@ Must be copied into __*glpifolder*__/plugins/mailbehaviours
 To be installed and enabled via the plugins configuration page in GLPI.
 
 ### How to use
-See wiki
+See wiki: (https://github.com/tomolimo/mailbehaviours/wiki)
 
 ### Issues
-Please report any question/problem in the issue section.
+Please report any question/problem in the issue section: (https://github.com/tomolimo/mailbehaviours/issues)

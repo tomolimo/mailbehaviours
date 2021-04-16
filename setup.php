@@ -1,6 +1,6 @@
 <?php
 
-define ("PLUGIN_MAILBEHAVIOURS_VERSION", "1.0.2");
+define ("PLUGIN_MAILBEHAVIOURS_VERSION", "1.0.3");
 
 /**
  * Summary of plugin_init_mailbehaviours

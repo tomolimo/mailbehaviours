@@ -56,7 +56,7 @@ class PluginMailBehaviours {
     */
    public static function getTextFromHtml($str) {
       $ret = Toolbox::unclean_html_cross_side_scripting_deep($str);
-      $ret = preg_replace("/<(p|br|div)( [^>]*)?".">/i", "\n", $ret);
+      $ret = preg_replace("/<(p|br|div|tr)( [^>]*)?".">/i", "\n", $ret);
       $ret = preg_replace("/(&nbsp;| |\xC2\xA0)+/", " ", $ret);
       $ret = strip_tags($ret);
       $ret = html_entity_decode(html_entity_decode($ret, ENT_QUOTES));
@@ -153,7 +153,6 @@ class PluginMailBehaviours {
    * @return void
    */
    public static function plugin_pre_item_add_mailbehaviours($parm) {
-      global $DB, $mailgate;
 
       if (isset($parm->input['_mailgate'])) {
          // this ticket have been created via email receiver.
