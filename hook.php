@@ -1,5 +1,7 @@
 <?php
 
+use Glpi\RichText\RichText;
+
 /**
  * Summary of plugin_mailbehaviours_install
  * @return boolean
@@ -55,7 +57,7 @@ class PluginMailBehaviours {
     * @return string bare text
     */
    public static function getTextFromHtml($str) {
-      $ret = Toolbox::unclean_html_cross_side_scripting_deep($str);
+      $ret = RichText::getSafeHtml($str);
       $ret = preg_replace("/<(p|br|div|tr)( [^>]*)?".">/i", "\n", $ret);
       $ret = preg_replace("/(&nbsp;| |\xC2\xA0)+/", " ", $ret);
       $ret = strip_tags($ret);
@@ -107,7 +109,7 @@ class PluginMailBehaviours {
                'LIMIT'     => 1
                ]);
 
-            if ($row = $res->next()) {
+            if ($row = $res->current()) {
                $results[] = $row['id'];
             }
          }
@@ -301,7 +303,7 @@ class PluginMailBehaviours {
    //      if ($res->numrows() != 1) {
    //         return false;
    //      }
-   //      $user->fields = $res->next();
+   //      $user->fields = $res->current();
    //      if (is_array($user->fields) && count($user->fields)) {
    //         return $user;
    //      }

@@ -1,6 +1,6 @@
 <?php
 
-define ("PLUGIN_MAILBEHAVIOURS_VERSION", "1.0.3");
+define ("PLUGIN_MAILBEHAVIOURS_VERSION", "2.0.0");
 
 /**
  * Summary of plugin_init_mailbehaviours
@@ -10,7 +10,7 @@ function plugin_init_mailbehaviours() {
 
    global $PLUGIN_HOOKS;
 
-   Plugin::registerClass('PluginMailBehaviours', ['classname' => 'PluginMailBehaviours']);
+   Plugin::registerClass('PluginMailBehaviours');
 
    $PLUGIN_HOOKS['csrf_compliant']['mailbehaviours'] = true;
 
@@ -39,8 +39,8 @@ function plugin_version_mailbehaviours() {
       'homepage'     => 'https://github.com/tomolimo/mailbehaviours',
       'requirements' => [
          'glpi' => [
-            'min' => '9.5',
-            'max' => '9.6'
+            'min' => '10.0',
+            'max' => '10.1'
             ]
          ]
    ];
@@ -53,9 +53,9 @@ function plugin_version_mailbehaviours() {
  * @return bool
  */
 function plugin_mailbehaviours_check_prerequisites() {
-   if (version_compare(GLPI_VERSION, '9.5', 'lt')
-       && version_compare(GLPI_VERSION, '9.6', 'ge')) {
-      echo "This plugin requires GLPI >= 9.5 and < 9.6";
+   if (version_compare(GLPI_VERSION, '10.0', 'lt')
+       && version_compare(GLPI_VERSION, '10.1', 'ge')) {
+      echo "This plugin requires GLPI >= 10.0 and < 10.1";
       return false;
    } else {
       return true;
