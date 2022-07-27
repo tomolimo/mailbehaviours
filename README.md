@@ -13,7 +13,7 @@ With this plugin, they only need to forward these emails to GLPI, after having a
 
 
 ### GLPI compliance
-It is currently compatible with GLPI 9.5
+It is currently compatible with GLPI 9.5 and 10.0
 
 ### Installation
 Must be copied into __*glpifolder*__/plugins/mailbehaviours
