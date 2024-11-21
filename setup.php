@@ -1,7 +1,32 @@
 <?php
+/*
+-------------------------------------------------------------------------
+MailBehaviours plugin for GLPI
+Copyright (C) 2020-2024 by Raynet SAS a company of A.Raymond Network.
+https://www.araymond.com/
+-------------------------------------------------------------------------
+LICENSE
 
-define ("PLUGIN_MAILBEHAVIOURS_VERSION", "2.0.0");
+This file is part of MailBehaviours plugin for GLPI.
 
+This file is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This plugin is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this plugin. If not, see <http://www.gnu.org/licenses/>.
+--------------------------------------------------------------------------
+ */
+
+define ("PLUGIN_MAILBEHAVIOURS_VERSION", "2.1.0");
+define ("PLUGIN_MAILBEHAVIOURS_MIN_GLPI", "10.0");
+define ("PLUGIN_MAILBEHAVIOURS_MAX_GLPI", "10.1");
 /**
  * Summary of plugin_init_mailbehaviours
  * Init the hooks of the plugins
@@ -39,8 +64,8 @@ function plugin_version_mailbehaviours() {
       'homepage'     => 'https://github.com/tomolimo/mailbehaviours',
       'requirements' => [
          'glpi' => [
-            'min' => '10.0',
-            'max' => '10.1'
+            'min' => PLUGIN_MAILBEHAVIOURS_MIN_GLPI,
+            'max' => PLUGIN_MAILBEHAVIOURS_MAX_GLPI
             ]
          ]
    ];
@@ -53,9 +78,9 @@ function plugin_version_mailbehaviours() {
  * @return bool
  */
 function plugin_mailbehaviours_check_prerequisites() {
-   if (version_compare(GLPI_VERSION, '10.0', 'lt')
-       && version_compare(GLPI_VERSION, '10.1', 'ge')) {
-      echo "This plugin requires GLPI >= 10.0 and < 10.1";
+   if (version_compare(GLPI_VERSION, PLUGIN_MAILBEHAVIOURS_MIN_GLPI, 'lt')
+       && version_compare(GLPI_VERSION, PLUGIN_MAILBEHAVIOURS_MAX_GLPI, 'ge')) {
+      echo "This plugin requires GLPI >= " . PLUGIN_MAILBEHAVIOURS_MIN_GLPI . "and < " . PLUGIN_MAILBEHAVIOURS_MAX_GLPI;
       return false;
    } else {
       return true;
