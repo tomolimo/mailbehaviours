@@ -26,6 +26,9 @@ along with this plugin. If not, see <http://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------
  */
 
+use Glpi\Toolbox\Sanitizer;
+
+
 /**
  * Summary of plugin_mailbehaviours_install
  * @return boolean

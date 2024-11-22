@@ -24,7 +24,7 @@ along with this plugin. If not, see <http://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------
  */
 
-define ("PLUGIN_MAILBEHAVIOURS_VERSION", "2.1.0");
+define ("PLUGIN_MAILBEHAVIOURS_VERSION", "2.1.1");
 define ("PLUGIN_MAILBEHAVIOURS_MIN_GLPI", "10.0");
 define ("PLUGIN_MAILBEHAVIOURS_MAX_GLPI", "10.1");
 /**
