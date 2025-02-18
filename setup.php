@@ -2,7 +2,7 @@
 /*
 -------------------------------------------------------------------------
 MailBehaviours plugin for GLPI
-Copyright (C) 2020-2024 by Raynet SAS a company of A.Raymond Network.
+Copyright (C) 2020-2025 by Raynet SAS a company of A.Raymond Network.
 https://www.araymond.com/
 -------------------------------------------------------------------------
 LICENSE
@@ -24,8 +24,8 @@ along with this plugin. If not, see <http://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------
  */
 
-define ("PLUGIN_MAILBEHAVIOURS_VERSION", "2.1.1");
-define ("PLUGIN_MAILBEHAVIOURS_MIN_GLPI", "10.0");
+define ("PLUGIN_MAILBEHAVIOURS_VERSION", "2.1.2");
+define ("PLUGIN_MAILBEHAVIOURS_MIN_GLPI", "10.0.18");
 define ("PLUGIN_MAILBEHAVIOURS_MAX_GLPI", "10.1");
 /**
  * Summary of plugin_init_mailbehaviours

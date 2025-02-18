@@ -2,7 +2,7 @@
 /*
 -------------------------------------------------------------------------
 MailBehaviours plugin for GLPI
-Copyright (C) 2020-2024 by Raynet SAS a company of A.Raymond Network.
+Copyright (C) 2020-2025 by Raynet SAS a company of A.Raymond Network.
 
 https://www.araymond.com/
 -------------------------------------------------------------------------
@@ -188,23 +188,20 @@ class PluginMailBehaviours {
          // search for ##From if it exists, then try to find real requester from DB
          $users_id = self::getUsersID($parm->input['content'], "From");
          if (count($users_id) > 0) {
-            $parm->input['users_id_recipient'] = $parm->input['_users_id_requester'];
+            $parm->input['users_id_recipient']  = $parm->input['_users_id_requester'];
             $parm->input['_users_id_requester'] = $users_id[0];
 
             // as we have changed the requester, then we must replay the Rules for assigning a ticket created through a mails receiver
-            $mailcollector = new MailCollector();
-            if ($mailcollector->getFromDB($parm->input['_mailgate'])) {
-               $rule_options['ticket']              = $parm->input;
-               $rule_options['headers']             = $mailcollector->getHeaders($parm->input['_message']);
-               $rule_options['mailcollector']       = $parm->input['_mailgate'];
-               $rule_options['_users_id_requester'] = $parm->input['_users_id_requester'];
-               $rulecollection                      = new RuleMailCollectorCollection();
-               $output                              = $rulecollection->processAllRules([], [], $rule_options);
+            $rule_options['ticket']              = $parm->input;
+            $rule_options['headers']             = $parm->input['_head'];
+            $rule_options['mailcollector']       = $parm->input['_mailgate'];
+            $rule_options['_users_id_requester'] = $parm->input['_users_id_requester'];
+            $rulecollection                      = new RuleMailCollectorCollection();
+            $output                              = $rulecollection->processAllRules([], [], $rule_options);
 
-               // returns the new values in the input field
-               foreach ($output as $key => $value) {
-                  $parm->input[$key] = $value;
-               }
+            // returns the new values in the input field
+            foreach ($output as $key => $value) {
+                $parm->input[$key] = $value;
             }
          }
       }
